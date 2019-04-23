@@ -1,5 +1,5 @@
 # README
-https://app.codeship.com/projects/0bd5e000-47e5-0137-5f6a-4a6d829d36a9/status?branch=master
+[![Codeship Status for IndayLi/launch-visual-bookshelf](https://app.codeship.com/projects/0bd5e000-47e5-0137-5f6a-4a6d829d36a9/status?branch=master)](https://app.codeship.com/projects/337622)
 
 # This README would normally document whatever steps are necessary to get the
 application up and running.
