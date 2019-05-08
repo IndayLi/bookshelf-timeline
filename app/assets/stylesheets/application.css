@@ -15,3 +15,39 @@
  *= require foundation_and_overrides
 
  */
+/* TABLE OF CONTENTS */
+/* 1) General */
+/* 2) Welcome Page */
+/* 3) Users */
+/* 4) Books */
+/* 5) Timelines */
+/* 6) Events */
+/* 7) Forms */
+/* 8) Admin-specific */
+
+/* 1) General */
+body {
+  background-color: #D3D3D3;
+  margin: 20px
+}
+
+/* 2) Welcome Page */
+.welcome-box {
+  display: flow-root;
+  background-color: white;
+  border-radius: 10px;
+  width: 400px;
+  align-content: center;
+}
+
+/* 3) Users */
+
+/* 4) Books */
+
+/* 5) Timelines */
+
+/* 6) Events */
+
+/* 7) Forms */
+
+/* 8) Admin-specific */
