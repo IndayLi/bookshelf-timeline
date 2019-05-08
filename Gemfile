@@ -56,3 +56,7 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails', '~> 5.0'
 gem 'webpacker', '~> 3.3'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+# required for CarrierWave AWS S3
+gem "fog-aws"
