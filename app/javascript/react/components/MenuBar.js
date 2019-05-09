@@ -9,9 +9,9 @@ const MenuBar = (props) => {
       <div className="container">
       {props.children}
       </div>
-      <div id="bottom-navbar">
+      <div id="menu-bar">
         <h3>This is sample text from MenuBar</h3>
-        <div id="nav-menu">
+        <div className="menu-icon">
           <div><SVGIcon name="user" height={40} /></div>
           <div><SVGIcon name="books" height={40} /></div>
           <div><SVGIcon name="calendar" height={40} /></div>

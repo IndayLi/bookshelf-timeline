@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 const Book = props => {
-debugger
   return(
     <div>
       <svg xmlns="http://www.w3.org/2000/svg" width={props.width} height={props.height} viewBox={`0 0 ${props.width} ${props.height}`}>

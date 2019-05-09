@@ -4,7 +4,7 @@ import SVGCircle from './SVGCircle'
 
 const NavBar = (props) => {
   return (
-    <div id="bottom-navbar">
+    <div id="nav-bar">
       <h3>This is sample text from NavBar</h3>
       <div id="nav-icons">
         <div><SVGIcon name="chevron-left-light" height={40} /></div>

@@ -47,10 +47,13 @@ body {
   justify-content: center;
 }
 
-#bottom-navbar {
+#nav-bar {
   height: 125;
   align-items: center;
   z-index: 100;
+  background-color: navy;
+  position: fixed;
+  bottom: 60;
 }
 
 #nav-icons {
@@ -58,16 +61,24 @@ body {
   display: flex;
   justify-content: space-between;
 }
-#nav-menu {
+
+#menu-bar {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  height: 60;
+
+}
+
+.menu-icon {
   padding-left: 200px;
   padding-right: 200px;
-  background-color: white;
   color: gray;
   display: flex;
   justify-content: space-between;
 }
 
-.nav-cirlces {
+.nav-circles {
   color: pink;
 }
 
