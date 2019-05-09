@@ -48,16 +48,27 @@ body {
 }
 
 #bottom-navbar {
-  background-color: white;
   height: 125;
   align-items: center;
   z-index: 100;
 }
 
 #nav-icons {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+#nav-menu {
+  padding-left: 200px;
+  padding-right: 200px;
+  background-color: white;
   color: gray;
   display: flex;
   justify-content: space-between;
+}
+
+.nav-cirlces {
+  color: pink;
 }
 
 .container {

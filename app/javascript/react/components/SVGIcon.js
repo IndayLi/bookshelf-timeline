@@ -86,25 +86,25 @@ const getPath = (name, props) => {
 };
 
 const SVGIcon = ({
- name = "",
- style = {},
- fill = "#5f5f5f",
- viewBox = "",
- width = "100%",
- className = "",
- height = "100%"
-}) => (
- <svg
-   width={width}
-   style={style}
-   height={height}
-   className={className}
-   xmlns="http://www.w3.org/2000/svg"
-   viewBox={viewBox || getViewBox(name)}
-   xmlnsXlink="http://www.w3.org/1999/xlink"
- >
-   {getPath(name, { fill })}
- </svg>
-);
+  name = "",
+  style = {},
+  fill = "#5f5f5f",
+  viewBox = "",
+  width = "100%",
+  className = "",
+  height = "100%"
+  }) => (
+    <svg
+      width={width}
+      style={style}
+      height={height}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={viewBox || getViewBox(name)}
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      {getPath(name, { fill })}
+    </svg>
+  );
 
 export default SVGIcon;
