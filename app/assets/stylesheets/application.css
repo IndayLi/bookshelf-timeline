@@ -26,9 +26,16 @@
 /* 8) Admin-specific */
 
 /* 1) General */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Raleway', sans-serif;
+}
+
 body {
   background-color: #D3D3D3;
-  margin: 20px
+  margin: 0px;
 }
 
 /* 2) Welcome Page */
@@ -37,7 +44,24 @@ body {
   background-color: white;
   border-radius: 10px;
   width: 400px;
-  align-content: center;
+  justify-content: center;
+}
+
+#bottom-navbar {
+  background-color: white;
+  height: 125;
+  align-items: center;
+  z-index: 100;
+}
+
+#nav-icons {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  height: 600px;
 }
 
 /* 3) Users */

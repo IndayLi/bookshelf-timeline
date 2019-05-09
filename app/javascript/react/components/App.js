@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Router, Route, browserHistory} from 'react-router';
+import { Router, browserHistory, Route} from 'react-router';
 import ShelvesContainer from '../containers/ShelvesContainer'
 import NavBar from './NavBar';
+import IconIndex from './IconIndex'
 
 const App = (props) => {
   return(
