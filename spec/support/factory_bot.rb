@@ -6,8 +6,15 @@ FactoryBot.define do
     sequence(:email) {|n| "user#{n}@example.com" }
     password { 'password1234' }
     password_confirmation { 'password1234' }
-    image_url { 'https://www.nicepng.com/maxp/u2w7r5y3a9q8e6y3/' }
+    image_url { '' }
     access_token { 'access_token'}
     access_token_secret { 'access_token_secret'}
   end
+
+  factory :shelf do
+    user { FactoryBot.create(:user) }
+    sequence(:name) {|n| "Bookshelf \##{n}" }
+    description { Faker::Hipster.sentence(6, false, 3)}
+  end
+
 end

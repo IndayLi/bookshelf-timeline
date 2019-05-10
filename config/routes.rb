@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   devise_for :users do
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :shelves, only: [:index]
+    end
+  end
+
   resources :homes, only: [:index]
   resources :shelves, only: [:index, :show]
 

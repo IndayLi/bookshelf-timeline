@@ -10,7 +10,6 @@ const MenuBar = (props) => {
       {props.children}
       </div>
       <div id="menu-bar">
-        <h3>This is sample text from MenuBar</h3>
         <div className="menu-icon">
           <div><SVGIcon name="user" height={40} /></div>
           <div><SVGIcon name="books" height={40} /></div>

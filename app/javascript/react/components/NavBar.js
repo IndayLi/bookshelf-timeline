@@ -9,11 +9,11 @@ const NavBar = (props) => {
       <div id="nav-icons">
         <div><SVGIcon name="chevron-left-light" height={40} /></div>
         <div><SVGIcon name="chevron-left-solid" height={40} /></div>
-        <div>
-          <SVGCircle className="nav-circles" radius="10" viewBox="0 0 20 20" color="pink"/>
-          <SVGCircle className="nav-circles" radius="10" viewBox="0 0 20 20" color="white"/>
-          <SVGCircle className="nav-circles" radius="10" viewBox="0 0 20 20" color="white"/>
-        </div>
+        // <div>
+        //   <SVGCircle className="nav-circles" radius="10" viewBox="0 0 20 20" color="pink"/>
+        //   <SVGCircle className="nav-circles" radius="10" viewBox="0 0 20 20" color="white"/>
+        //   <SVGCircle className="nav-circles" radius="10" viewBox="0 0 20 20" color="white"/>
+        // </div>
         <div><SVGIcon name="chevron-right-solid" height={40} /></div>
         <div><SVGIcon name="chevron-right-light" height={40} /></div>
       </div>

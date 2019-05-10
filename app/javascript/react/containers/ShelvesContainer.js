@@ -7,11 +7,11 @@ class ShelvesContainer extends Component {
   constructor(props) {
     super(props);
     this.state={
+      shelves: []
     }
   }
 
   componentDidMount() {
-
   }
 
   render() {
@@ -28,13 +28,16 @@ class ShelvesContainer extends Component {
 
     return(
       <div>
-        <h1>This is the Shelves IndexContainer</h1>
+        <h1>These are Your Bookshelves</h1>
+        <div>
+        </div>
         <div>
           <Book
-            height="1243"
             width="142"
+            height="1423"
             color={bookColor()}
             title="Title"
+            viewBox="0 0 142 1423"
           />
         </div>
         <div>
