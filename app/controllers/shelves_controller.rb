@@ -1,6 +1,6 @@
 class ShelvesController < ApplicationController
   before_action :authorize_user
-
+  
   def index
     @user = current_user
     @shelves = @user.shelves

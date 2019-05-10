@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Book from '../components/Book'
 import NavBar from '../components/NavBar'
+import Shelf from '../components/Shelf'
 
 
 class ShelvesContainer extends Component {
@@ -12,6 +13,21 @@ class ShelvesContainer extends Component {
   }
 
   componentDidMount() {
+    fetch('/api/v1/shelves')
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status}(${response.statusText})` ,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({shelves: body})
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
@@ -26,10 +42,23 @@ class ShelvesContainer extends Component {
       return COLORS[selection]
     }
 
+    let shelvesList = this.state.shelves.map(shelf => {
+      return (
+        <Shelf
+          key={shelf.id}
+          id={shelf.id}
+          name={shelf.name}
+          description={shelf.description}
+          timestamp={shelf.created_at}
+        />
+      )
+    })
+
     return(
       <div>
         <h1>These are Your Bookshelves</h1>
         <div>
+        {shelvesList}
         </div>
         <div>
           <Book
