@@ -10,12 +10,12 @@ RSpec.describe User, type: :model do
     user_4 = User.create(first_name: 'first4', email: 'email_2@test.com', password: 'password123',  password_confirmation: 'password123')
     user_5 = User.create(first_name: 'first5', email: 'email_5@test.com', password: 'password',  password_confirmation: 'password')
 
-    it "successfully creates user" do
+    it "complete form successfully creates user" do
       expect(user_1.valid?).to eq(true)
       expect(user_2.valid?).to eq(true)
     end
 
-    it "fails to create user" do
+    it "incomplete form fails to create user" do
       expect(user_3.valid?).to eq(false)
       expect(user_4.valid?).to eq(false)
       expect(user_5.valid?).to eq(false)

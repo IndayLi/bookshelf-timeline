@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Book from './Book'
+import SVGBook from '../components/SVGBook'
 
 
 class ShelvesShowContainer extends Component {

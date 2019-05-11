@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
   root "shelves#index"
-  # root "homes#index"
-  devise_for :users do
-  end
+  devise_for :users
+
 
   namespace :api do
     namespace :v1 do
