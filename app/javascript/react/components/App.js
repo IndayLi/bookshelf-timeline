@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { Router, browserHistory, Route} from 'react-router';
+import ShelvesContainer from '../containers/ShelvesContainer'
+import MenuBar from './MenuBar';
+import IconIndex from './IconIndex'
 
-export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+const App = (props) => {
+  return(
+    <Router history={browserHistory}>
+      <Route path='/' component={MenuBar}>
+        <Route path='/shelves' component={ShelvesContainer}/>
+      </Route>
+    </Router>
+  )
 }
 
 export default App
