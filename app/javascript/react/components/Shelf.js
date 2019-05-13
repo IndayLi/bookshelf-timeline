@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router'
 
 const Shelf = props => {
   return(
@@ -7,7 +8,7 @@ const Shelf = props => {
         <div className="shelf-image front">
         </div>
         <div className="shelf-details back">
-          <h3>{props.name}</h3>
+          <Link to={`/shelves/${props.id}`}><h3>{props.name}</h3></Link>
           <p>{props.description}</p>
           <p>Book Count: #</p>
         </div>
