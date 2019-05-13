@@ -7,11 +7,11 @@ class ShelvesController < ApplicationController
   end
 
   def show
-    @shelf = Shelf.find(params["id"])
+    @user = current_user
+    @shelf = @user.shelves.find(params["id"])
   end
 
   def authorize_user
-
     if !user_signed_in?
       flash[:notice] = "Please sign in or create an account."
       redirect_to new_user_session_path
