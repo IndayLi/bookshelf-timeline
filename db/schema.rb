@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_12_195744) do
+ActiveRecord::Schema.define(version: 2019_05_13_181248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "assignments", force: :cascade do |t|
-    t.bigint "shelf_id", null: false
-    t.bigint "book_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_assignments_on_book_id"
-    t.index ["shelf_id"], name: "index_assignments_on_shelf_id"
-  end
 
   create_table "books", force: :cascade do |t|
     t.string "title", null: false
@@ -32,16 +23,18 @@ ActiveRecord::Schema.define(version: 2019_05_12_195744) do
     t.string "location"
     t.string "image_url"
     t.string "publication_year"
+    t.boolean "completed_reading", default: false, null: false
+    t.boolean "favorite", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "shelves", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "name", default: "Bookshelf #1", null: false
-    t.text "description"
+    t.bigint "book_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_shelves_on_book_id"
     t.index ["user_id"], name: "index_shelves_on_user_id"
   end
 
