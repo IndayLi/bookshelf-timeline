@@ -150,63 +150,12 @@ h3 {
   z-index: -1;
 }
 
-
-/* .shelf-collection {
-  display: absolute;
-  justify-content: space-around;
-  margin: 10px;
-  padding-bottom: 100px;
-} */
-
-/* .shelf-details {
-  position: absolute;
-  display: table;
-  height: 190px;
-  width: 1260px;
-  background-color: #E0E0E0;
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px;
-  line-height: 340px;
-  box-shadow: inset 0 0 20px #C1C1C1;
-} */
-
-/* .shelf-details p h3{
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
-  padding: 0px;
-  margin: 2px;
-} */
-/*
-.shelf-image {
-  height: 190px;
-  width: 1260px; */
-  /* background-color: #E0E0E0; */
-  /* background-image: url("/images/bookshelf-3981515_1280.png"); */
-  /* background-image: url("../../assets/images/bookshelf-3981515_1920.png"); */
-  /* border-radius: 10px 10px 0px 0px;
-  padding: 20px;
-  text-align: center; */
-  /* box-shadow: inset 0 0 20px #C1C1C1; */
-/* } */
-
 /* 5) Books */
 
-/* .book-spine {
-  margin: 1px;
-  background-color: #048091;
-  border-radius: 10px 10px 0 0;
-  height: 550px;
-  width: 45px;
-  fill: #FFFFFF;
-  font-size: 10px;
-  font-family: Raleway;
-  padding: 2px;
-} */
 .book-spine {
   color: #FFFFFF;
   display: flex;
-  cursor: e-resize;
+  cursor: pointer;
 }
 
 .blue {
@@ -266,8 +215,6 @@ h3 {
 /* 9) Admin-specific */
 
 /* 10) Animation */
-
-
 
 
 /* FLIPPING TILES */

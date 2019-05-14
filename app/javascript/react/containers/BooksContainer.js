@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 import Book from '../components/Book'
 import NavBar from '../components/NavBar'
-import SVGBookshelf from '../components/SVGBookshelf'
+import IMGBookshelf from '../components/IMGBookshelf'
 
 class BooksContainer extends Component {
   constructor(props) {
@@ -76,7 +76,7 @@ class BooksContainer extends Component {
         {bookArray}
         </div>
         <div>
-        <SVGBookshelf/>
+        <IMGBookshelf/>
         </div>
         <NavBar/>
       </div>

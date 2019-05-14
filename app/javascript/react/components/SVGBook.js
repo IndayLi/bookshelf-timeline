@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-import React from 'react'
-
 const SVGBooks = props => (
   <svg width={1791} height={550} {...props}>
     <g data-name="Group 48">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const SVGBookshelf = props => (
+const IMGBookshelf = props => (
   <div>
     <div id="shelfBack">
     </div>
@@ -9,4 +9,4 @@ const SVGBookshelf = props => (
   </div>
 )
 
-export default SVGBookshelf
+export default IMGBookshelf
