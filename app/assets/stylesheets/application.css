@@ -44,7 +44,15 @@ body {
 h1 {
   padding-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-weight: bolder;
+  justify-content: center;
+  text-align: center;
+}
+.page-header {
+  background-color: rgba(211, 211, 211, 0.5);
+  z-index: 100;
+  margin-top: 0px;
+  padding-top: 20px;
 }
 
 h3 {
@@ -70,7 +78,7 @@ h3 {
   bottom: 60px;
   margin: 0;
   padding: 15px;
-  z-index: 100;
+  z-index: 30;
 }
 
 #nav-icons {
@@ -110,55 +118,92 @@ h3 {
 }
 
 .container {
-  padding: 20px;
+  padding-left: 20px;
 }
 
 /* 3) Users */
 
 /* 4) Shelves */
-.shelf-collection {
-  display: absolute;
-  justify-content: space-around;
-  margin: 10px;
-  padding-bottom: 100px;
+
+#shelf {
+  font-size: 2em;
 }
 
-.shelf-details {
-  position: absolute;
-  display: table;
-  height: 190px;
-  width: 1260px;
-  background-color: #E0E0E0;
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px;
-  /* line-height: 340px; */
-  box-shadow: inset 0 0 20px #C1C1C1;
+#shelfFront {
+  position: fixed;
+  bottom: 140px;
+  width: 96%;
+  height: 42px;
+  background-color: #9F5F1E;
+  z-index: 50;
+  box-shadow: 10px 10px 10px #707070;
+  margin-right: 20px;
 }
 
-.shelf-details p h3{
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
-  padding: 0px;
-  margin: 2px;
-}
-
-.shelf-image {
-  height: 190px;
-  width: 1260px;
-  /* background-color: #E0E0E0; */
-  background-image: url("/images/bookshelf-3981515_1280.png");
-  /* background-image: url("../../assets/images/bookshelf-3981515_1920.png"); */
-  border-radius: 10px 10px 0px 0px;
-  padding: 20px;
-  text-align: center;
-  /* box-shadow: inset 0 0 20px #C1C1C1; */
+#shelfBack {
+  position: fixed;
+  bottom: 175px;
+  width: 96%;
+  height: 50px;
+  background-color: #B47230;
+  border-radius: 10px 10px 0 0;
+  z-index: -1;
 }
 
 /* 5) Books */
-.books dl{
+
+.book-spine {
+  color: #FFFFFF;
   display: flex;
-  position: relative;
+  cursor: pointer;
+}
+
+.blue {
+  background-color: #02A7BC;
+}
+.yellow {
+  background-color: #F2D43F;
+}
+.green {
+  background-color: #61C155;
+}
+.pink {
+  background-color: #D1026C;
+}
+
+.title{
+  align-self: center;
+  margin: 10px;
+  padding-left: 30px;
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+.author{
+  align-self: center;
+  padding-right: 40px;
+  padding-left: 30px;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: .75em;
+  justify-content:  space-around;
+}
+
+.book-contents {
+  box-shadow: inset 5px -3px 15px #000000;
+  border-radius: 0 5px 5px 0;
+  margin-top: 2px;
+  height: 40px;
+  align-content: center;
+  z-index: 40;
+}
+
+.bookshelf-content {
+  margin-left: 70px;
+  transform: rotate(-90deg);
+  position: fixed;
+  bottom: 140px;
+  z-index: 40;
 }
 
 /* 6) Timelines */
@@ -170,8 +215,6 @@ h3 {
 /* 9) Admin-specific */
 
 /* 10) Animation */
-
-
 
 
 /* FLIPPING TILES */

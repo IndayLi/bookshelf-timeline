@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
-  has_many :assignments
-  has_many :bookshelves, through: :assignments
+  has_many :shelves
+  has_many :users, through: :shelves
 
   validates :title, presence: true
   validates :author, presence: true
