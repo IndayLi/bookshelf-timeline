@@ -51,11 +51,15 @@ h1, h2 {
 
 h3 {
   font-family: 'Raleway', sans-serif;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-dl .bold-text {
-  font-weight: bold:
+dl {
+  margin: 5px;
+}
+
+.bold-text {
+  font-weight: bold;
 }
 .page-header {
   background-color: rgba(211, 211, 211, 0.5);
@@ -233,6 +237,7 @@ dl .bold-text {
 .book-show-right {
   margin-top: 200px;
   margin-right: 225px;
+
 }
 
 .book-show-left {
@@ -270,6 +275,23 @@ dl .bold-text {
     background-image: url('/images/open-book_500x310.png');
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .book-cover-image {
+    height: 20px;
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .book-show-left {
+    margin: 0px
+  }
+  .book-show-right {
+    margin: 0px
   }
 }
 

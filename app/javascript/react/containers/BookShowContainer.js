@@ -28,7 +28,6 @@ class BookShowContainer extends Component {
           this.setState({book: body})
             })
         .catch(error => console.error(`Error in fetch: ${error.message}`));
-
   }
 
   render() {
