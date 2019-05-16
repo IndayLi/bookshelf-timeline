@@ -2,8 +2,8 @@
   "name": "bookshelf",
   "private": true,
   "engines": {
-    "node": ">=6.0.0",
-    "yarn": ">=0.25.2"
+    "node": ">=10.14.1",
+    "yarn": ">=1.12.3"
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
