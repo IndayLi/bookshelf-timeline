@@ -8,7 +8,7 @@ import IconIndex from './IconIndex'
 const App = (props) => {
   return(
     <Router history={browserHistory}>
-      <Route path='/' component={MenuBar}>
+      <Route path='/' component={BooksContainer}>
         <Route path='/books' component={BooksContainer}/>
         <Route path='/books/:id' component={BookShowContainer}/>
       </Route>
