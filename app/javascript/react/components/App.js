@@ -10,7 +10,7 @@ const App = (props) => {
     <Router history={browserHistory}>
       <Route path='/' component={MenuBar}>
         <Route path='/books' component={BooksContainer}/>
-        <Route path='/books/:id/' component={BookShowContainer}/>
+        <Route path='/books/:id' component={BookShowContainer}/>
       </Route>
     </Router>
   )

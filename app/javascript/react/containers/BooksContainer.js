@@ -13,8 +13,6 @@ class BooksContainer extends Component {
       books: []
     }
     this.setBookColor = this.setBookColor.bind(this);
-    this.setBookWidth = this.setBookWidth.bind(this);
-    this.setOnBookClick = this.setOnBookClick.bind(this);
   }
 
   componentDidMount() {
@@ -35,26 +33,13 @@ class BooksContainer extends Component {
         .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  setOnBookClick() {
-  }
-
   setBookColor(value) {
     let colorIndex = ["blue", "pink", "green", "yellow"]
     return colorIndex[value%4]
   }
 
-  setBookWidth(value) {
-    let widthIndex = [
-      "blue", "pink", "green", "yellow", "blue", "pink", "green", "yellow", "blue", "green"
-    ]
-    return widthIndex[value%10]
-  }
-
   render() {
     let bookArray = this.state.books.map(book => {
-      // width={this.setBookWidth(book.id)}
-
-      // colorIndex={this.setBookColor(book.id)}
       return (
         <div className={`book-contents ${this.setBookColor(book.id)}`}>
           <Book
@@ -62,11 +47,11 @@ class BooksContainer extends Component {
             id={book.id}
             title={book.title}
             author={book.author}
+            book={book}
           />
         </div>
-      )
+    )
     })
-
     return(
       <div>
         <h1 className="page-header">

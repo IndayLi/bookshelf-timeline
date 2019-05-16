@@ -2,8 +2,10 @@ class BooksController < ApplicationController
   before_action :authorize_user
 
   def index
-  end 
+  end
 
+  def show
+  end
 
   def authorize_user
     if !user_signed_in?

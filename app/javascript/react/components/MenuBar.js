@@ -13,7 +13,7 @@ const MenuBar = (props) => {
       <div id="menu-bar">
         <div className="menu-icon">
           <div><SVGIcon name="user" height={40} /></div>
-          <div><Link to={'/shelves'}><SVGIcon name="books" height={40} /></Link></div>
+          <div><Link to={'/books'}><SVGIcon name="books" height={40} /></Link></div>
           <div><SVGIcon name="calendar" height={40} /></div>
           <div><SVGIcon name="search" height={40} /></div>
         </div>

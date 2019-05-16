@@ -41,12 +41,21 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-h1 {
+h1, h2 {
   padding-bottom: 20px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
   justify-content: center;
   text-align: center;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+dl .bold-text {
+  font-weight: bold:
 }
 .page-header {
   background-color: rgba(211, 211, 211, 0.5);
@@ -55,10 +64,10 @@ h1 {
   padding-top: 20px;
 }
 
-h3 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
+.hide {
+  visibility: hidden;
 }
+
 
 /* 2) Welcome Page */
 .welcome-box {
@@ -159,24 +168,25 @@ h3 {
 }
 
 .blue {
-  background-color: #02A7BC;
+  background-color: #03C1D9;
 }
 .yellow {
-  background-color: #F2D43F;
+  background-color: #FFDA24;
 }
 .green {
-  background-color: #61C155;
+  background-color: #1EC709;
 }
 .pink {
-  background-color: #D1026C;
+  background-color: #EB0079;
 }
 
 .title{
   align-self: center;
   margin: 10px;
   padding-left: 30px;
-  font-weight: bolder;
-  font-size: 1em;
+  padding-right: 30px;
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
 .author{
@@ -185,7 +195,7 @@ h3 {
   padding-left: 30px;
   font-style: italic;
   font-weight: lighter;
-  font-size: .75em;
+  font-size: 1em;
   justify-content:  space-around;
 }
 
@@ -193,21 +203,84 @@ h3 {
   box-shadow: inset 5px -3px 15px #000000;
   border-radius: 0 5px 5px 0;
   margin-top: 2px;
-  height: 40px;
+  height: 60px;
   align-content: center;
   z-index: 40;
 }
 
 .bookshelf-content {
-  margin-left: 70px;
+  margin-left: 200px;
   transform: rotate(-90deg);
   position: fixed;
-  bottom: 140px;
+  bottom: -5px;
   z-index: 40;
 }
 
+.book-cover-image {
+  /* margin-right: 40px;
+  margin-bottom: 40px; */
+  height: 400px;
+  width: 300px;
+  background-color: #D3D3D3;
+  border-style: double;
+  border-color: #707070;
+  border-width: thin;
+}
+
+.book-details {
+}
+
+.book-show-right {
+  margin-top: 200px;
+  margin-right: 225px;
+}
+
+.book-show-left {
+  /* margin-top: 200px; */
+  margin-left: 275px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .book-show-container {
+    padding-top: 80px;
+    column-count: 2;
+    height: 600px;
+    background-image: url('/images/open-book_600x1440.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .book-show-container {
+    padding-top: 80px;
+    column-count: 2;
+    height: 600px;
+    background-image: url('/images/open-book_500x1200.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .book-show-container {
+    padding-top: 80px;
+    column-count: 1;
+    height: 600px;
+    background-image: url('/images/open-book_500x310.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+
+
+
 /* 6) Timelines */
 
+.timeline-list {
+  padding-left: 30px;
+}
 /* 7) Events */
 
 /* 8) Forms */

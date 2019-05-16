@@ -2,9 +2,13 @@ class Api::V1::BooksController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    @user = current_user_data
-    @books = @user[:books]
-    render json: { user: @user, books: @books}
+    @books = current_user_data[:books]
+    render json: { user: current_user_data, books: @books}
+  end
+
+  def show
+    @book = Book.find(params[:id])
+    render json: @book
   end
 
   private
