@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "books#index"
+  get '/', to: "books#index"
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
 
   namespace :api do
