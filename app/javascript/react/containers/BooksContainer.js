@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+import SVGIcon from '../components/SVGIcon'
 import Book from '../components/Book'
 import NavBar from '../components/NavBar'
 import MenuBar from '../components/MenuBar'
@@ -49,7 +50,6 @@ class BooksContainer extends Component {
     }
 
     let bookArray = this.state.books.map((book, index) => {
-      debugger
       return (
         <div className={`book-contents ${this.setBookColor(book.id)}`} key={`${book.id} + div`}>
           <Book
@@ -66,6 +66,15 @@ class BooksContainer extends Component {
     })
     return(
       <div>
+        <div className="edit-shelf-button">
+          <SVGIcon
+          name="add-light"
+          height={40}
+          fill="#F4F4F4"
+          />
+        </div>
+        <div>
+        </div>
         <h1 className="page-header">
           {pageTitle}
         </h1>

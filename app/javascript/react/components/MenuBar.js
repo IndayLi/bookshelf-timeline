@@ -32,7 +32,7 @@ const MenuBar = (props) => {
           </div>
           <div className={`${books}`}>
             <Link to={'/books'}>
-              <SVGIcon name="books" height={40} fill={`${fill}`} />
+              <SVGIcon name="books" height={40} />
             </Link></div>
           <div className={`${calendar}`}>
             <SVGIcon name="calendar" height={40} />

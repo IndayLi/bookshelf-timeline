@@ -160,6 +160,13 @@ dl {
   z-index: -1;
 }
 
+.edit-shelf-button {
+  position: fixed;
+  top: 100px;
+  right: -300px;
+  z-index: 300;
+  display: inline-block;
+}
 /* 5) Books */
 
 .book-spine {
@@ -190,7 +197,7 @@ dl {
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1.1em;
   background: linear-gradient(180deg, rgba(36,36,36,0.3267682072829131) 0%, rgba(143,143,143,0.12228641456582634) 3%, rgba(143,143,143,0.26234243697478987) 84%, rgba(36,36,36,0.26514355742296913) 98%);
   width: 100%;
   border-radius: 5px;

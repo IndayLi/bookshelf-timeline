@@ -11,6 +11,10 @@ class Api::V1::BooksController < ApplicationController
     render json: @book
   end
 
+  def create
+    
+  end
+
   private
 
   def current_user_data
