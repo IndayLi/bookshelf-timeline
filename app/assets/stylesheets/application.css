@@ -100,8 +100,9 @@ dl {
   justify-content: space-between;
 }
 
-#nav-circles {
+.div-circles {
   margin: 10px;
+  align-self: center;
 }
 
 .nav-circle {
@@ -121,13 +122,9 @@ dl {
 .menu-icon {
   padding-left: 200px;
   padding-right: 200px;
-  color: gray;
+  color: #707070;
   display: flex;
   justify-content: space-between;
-}
-
-.nav-circles {
-  color: pink;
 }
 
 .container {
@@ -169,6 +166,7 @@ dl {
   color: #FFFFFF;
   display: flex;
   cursor: pointer;
+  justify-content: center;
 }
 
 .blue {
@@ -189,11 +187,17 @@ dl {
   margin: 10px;
   padding-left: 30px;
   padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-weight: bold;
   font-size: 1.25em;
+  background: linear-gradient(180deg, rgba(36,36,36,0.3267682072829131) 0%, rgba(143,143,143,0.12228641456582634) 3%, rgba(143,143,143,0.26234243697478987) 84%, rgba(36,36,36,0.26514355742296913) 98%);
+  width: 100%;
+  border-radius: 5px;
+  font-size-adjust: auto;
 }
 
-.author{
+/* .author{
   align-self: center;
   padding-right: 40px;
   padding-left: 30px;
@@ -201,10 +205,10 @@ dl {
   font-weight: lighter;
   font-size: 1em;
   justify-content:  space-around;
-}
+} */
 
 .book-contents {
-  box-shadow: inset 5px -3px 15px #000000;
+  box-shadow: inset 5px 0px 15px #000000;
   border-radius: 0 5px 5px 0;
   margin-top: 2px;
   height: 60px;
