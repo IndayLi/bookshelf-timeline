@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 import NavBar from '../components/NavBar'
+import MenuBar from '../components/MenuBar'
 
 class BookShowContainer extends Component {
   constructor(props) {
@@ -40,35 +41,31 @@ class BookShowContainer extends Component {
             </div>
           </div>
           <div className="book-show-right">
-            <div>
-              <h3>{this.state.book.title}</h3>
-              <div className="book-details">
-                <dd>
-                  <dl><span className="bold-text">Author:</span> {this.state.book.author}</dl>
-                  <dl><span className="bold-text">Description:</span> {this.state.book.description}</dl>
-                  <dl><span className="bold-text">Pages:</span> {this.state.book.page_count}</dl>
-                  <dl><span className="bold-text">Setting:</span> {this.state.book.location}</dl>
-                  <dl><span className="bold-text">Year Published:</span> {this.state.book.publication_year}</dl>
-                </dd>
-              </div>
+            <h3>{this.state.book.title}</h3>
+            <div className="book-details">
+              <dd>
+                <dl><span className="bold-text">Author:</span> {this.state.book.author}</dl>
+                <dl><span className="bold-text">Description:</span> {this.state.book.description}</dl>
+                <dl><span className="bold-text">Pages:</span> {this.state.book.page_count}</dl>
+                <dl><span className="bold-text">Setting:</span> {this.state.book.location}</dl>
+                <dl><span className="bold-text">Year Published:</span> {this.state.book.publication_year}</dl>
+              </dd>
             </div>
-            <div>
-              <h3>Timelines Created</h3>
-              <div className="timeline-list">
-                <ul>
-                  <li>Timeline #1</li>
-                  <li>Timeline #2</li>
-                </ul>
-              </div>
+            <h3>Timelines Created</h3>
+            <div className="timeline-list">
+              <ul>
+                <li>Timeline #1</li>
+                <li>Timeline #2</li>
+              </ul>
             </div>
           </div>
         </div>
         <div>
         <NavBar />
+        <MenuBar />
         </div>
       </div>
     )
   }
 }
-
 export default BookShowContainer;

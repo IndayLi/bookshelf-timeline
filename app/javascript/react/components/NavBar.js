@@ -6,18 +6,18 @@ const NavBar = (props) => {
   return (
     <div id="nav-bar">
       <div id="nav-icons">
-        <div><SVGIcon name="chevron-left-light" height={40} /></div>
-        <div><SVGIcon name="chevron-left-solid" height={40} /></div>
-        <div id="nav-circles">
-          <SVGCircle className="nav-circle" radius="10" viewBox="0 0 20 20" fill="red"/>
-          <SVGCircle className="nav-circle" radius="10" viewBox="0 0 20 20" fill="white"/>
-          <SVGCircle className="nav-circle" radius="10" viewBox="0 0 20 20" fill="white"/>
+        <div><SVGIcon name="chevron-left-light" height={30} /></div>
+        <div><SVGIcon name="chevron-left-solid" height={30} fill="white"/></div>
+        <div className="div-circles">
+          <SVGCircle className="nav-circle" radius="10" viewBox="0 0 30 30" fill="white"/>
+          <SVGCircle className="nav-circle" radius="10" viewBox="0 0 30 30" fill="white"/>
+          <SVGCircle className="nav-circle" radius="10" viewBox="0 0 30 30" fill="white"/>
         </div>
-        <div><SVGIcon name="chevron-right-solid" height={40} /></div>
-        <div><SVGIcon name="chevron-right-light" height={40} /></div>
+        <div><SVGIcon name="chevron-right-solid" height={30} fill="white"/></div>
+        <div><SVGIcon name="chevron-right-light" height={30} /></div>
       </div>
     </div>
   )
 }
 
-export default NavBar
+export default NavBar;

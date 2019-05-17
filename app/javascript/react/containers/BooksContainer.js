@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 
 import Book from '../components/Book'
 import NavBar from '../components/NavBar'
+import MenuBar from '../components/MenuBar'
 import IMGBookshelf from '../components/IMGBookshelf'
 
 class BooksContainer extends Component {
@@ -10,7 +11,8 @@ class BooksContainer extends Component {
     super(props);
     this.state={
       user: {},
-      books: []
+      books: [],
+      menu: "books"
     }
     this.setBookColor = this.setBookColor.bind(this);
   }
@@ -39,23 +41,33 @@ class BooksContainer extends Component {
   }
 
   render() {
-    let bookArray = this.state.books.map(book => {
+    let pageTitle
+    if (this.state.books.length === 0) {
+      pageTitle = "Add a Book to Your Library!"
+    } else {
+      pageTitle = "Select a Book!"
+    }
+
+    let bookArray = this.state.books.map((book, index) => {
+      debugger
       return (
-        <div className={`book-contents ${this.setBookColor(book.id)}`}>
+        <div className={`book-contents ${this.setBookColor(book.id)}`} key={`${book.id} + div`}>
           <Book
             key={book.id}
             id={book.id}
             title={book.title}
             author={book.author}
-            book={book}
+            menu={this.state.menu}
+            count={this.state.books.length}
+            index={index}
           />
         </div>
-    )
+      )
     })
     return(
       <div>
         <h1 className="page-header">
-          Select a Book!
+          {pageTitle}
         </h1>
         <div className="bookshelf-content">
         {bookArray}
@@ -64,6 +76,8 @@ class BooksContainer extends Component {
         <IMGBookshelf/>
         </div>
         <NavBar/>
+        <MenuBar
+          menu={this.state.menu}/>
       </div>
     )
   }
