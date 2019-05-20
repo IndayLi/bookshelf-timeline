@@ -37,7 +37,6 @@
 }
 
 body {
-
   background-color: #F7F7F7;
   margin: 0px;
   font-family: 'Raleway', sans-serif;
@@ -72,7 +71,7 @@ dl {
 }
 
 .page-header {
-, 0.5);
+  background-color: rgba(247,247,247,0.5);
   z-index: 30;   /* page-header */
   margin-top: 0px;
 }
@@ -92,7 +91,7 @@ dl {
   height: 70px;
   align-items: center;
   /* background-color: #D3D3D3; solid gray blends in with background*/
-  background-color: rgba(255,255,255, 0.5);
+  background-color: rgba(255,255,255,0.5);
   position: fixed;
   bottom: 60px;
   margin: 0;
