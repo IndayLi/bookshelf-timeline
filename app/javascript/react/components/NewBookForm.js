@@ -47,9 +47,9 @@ class NewBookForm extends Component {
 //requires fetch call to add book to list of books, AND add a shelf with user
   render() {
     return(
-      <div className="form-container">
+      <div>
         <h3>What New Book are You Exploring?</h3>
-        <form onSubmit={this.handleOnSubmit} className="new-book-form">
+        <form onSubmit={this.handleOnSubmit}>
           <FormField
             type="text"
             label="Title *"
