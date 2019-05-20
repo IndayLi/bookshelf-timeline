@@ -15,6 +15,7 @@ class BooksContainer extends Component {
       user: {},
       books: [],
       formVisibility: "hidden",
+      buttonVisibility: "visible",
       newBook: {},
       menu: "books"
     }
@@ -48,9 +49,9 @@ class BooksContainer extends Component {
 
   showNewBookForm(event) {
     if (this.state.formVisibility==="hidden") {
-      this.setState({ formVisibility: "visible" })
+      this.setState({ formVisibility: "visible", buttonVisibility: "hidden"})
     } else if (this.state.formVisibility==="visible") {
-      this.setState({ formVisibility: "hidden" })
+      this.setState({ formVisibility: "hidden", buttonVisibility: "visible" })
     }
   }
 
@@ -121,7 +122,7 @@ class BooksContainer extends Component {
         {bookArray}
         </div>
         <div>
-        <div className="edit-shelf-button" onClick={this.showNewBookForm}>
+        <div className={`edit-shelf-button ${this.state.buttonVisibility}`} onClick={this.showNewBookForm}>
         <SVGIcon
         name="add-light"
         height={35}

@@ -4,14 +4,18 @@ import { Link } from 'react-router'
 import SVGIcon from '../components/SVGIcon'
 import NavBar from '../components/NavBar'
 import MenuBar from '../components/MenuBar'
+import DeleteBookForm from '../components/DeleteBookForm'
 
 class BookShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state={
       book: "",
-      menu: "books"
+      menu: "books",
+      formVisibility: "hidden",
+      buttonVisibility: "visible"
     }
+    this.showDeleteBookForm = this.showDeleteBookForm.bind(this);
   }
 
   componentDidMount() {
@@ -33,9 +37,23 @@ class BookShowContainer extends Component {
         .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  showDeleteBookForm(event) {
+    if (this.state.formVisibility==="hidden") {
+      this.setState({ formVisibility: "visible", buttonVisibility: "hidden"})
+    } else if (this.state.formVisibility==="visible") {
+      this.setState({ formVisibility: "hidden", buttonVisibility: "visible" })
+    }
+  }
+
   render() {
     return(
       <div>
+        <div className={`delete-book ${this.state.formVisibility}`}>
+          <DeleteBookForm
+            handleVisibility={this.showDeleteBookForm}
+            book={this.state.book}
+          />
+        </div>
         <div className="book-show-container">
           <div className="book-show-left">
             <div className="book-cover-image">
@@ -62,7 +80,7 @@ class BookShowContainer extends Component {
             </div>
           </div>
         </div>
-        <div className="edit-shelf-button" onClick={this.showNewBookForm}>
+        <div className={`edit-shelf-button ${this.state.buttonVisibility}`} onClick={this.showDeleteBookForm}>
           <SVGIcon
           name="delete-light"
           height={35}

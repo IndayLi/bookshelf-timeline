@@ -238,7 +238,7 @@ dl {
   position: absolute;
   left: 130px;
   /* left: 0px; */
-  top: -130px;
+  top: -50px;
   display: block;
   justify-content: flex-start;
   z-index: 1;  /* bookshelf-content */
@@ -354,20 +354,14 @@ dl {
 /* 7) Events */
 
 /* 8) Forms */
-.add-book {
+.add-book,
+.delete-book {
   position: fixed;
   bottom: 60px;
   top: 0px;
   z-index: 12; /* add-book */
   padding: 20px;
   background-color: rgba(225,225,225,0.95);
-}
-
-
-.form-container {
-}
-
-.new-book-form {
 }
 
 .form-label {
