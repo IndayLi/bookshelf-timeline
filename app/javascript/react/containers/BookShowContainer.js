@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+import SVGIcon from '../components/SVGIcon'
 import NavBar from '../components/NavBar'
 import MenuBar from '../components/MenuBar'
 
@@ -8,7 +9,8 @@ class BookShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state={
-      book: ""
+      book: "",
+      menu: "books"
     }
   }
 
@@ -60,9 +62,18 @@ class BookShowContainer extends Component {
             </div>
           </div>
         </div>
+        <div className="edit-shelf-button" onClick={this.showNewBookForm}>
+          <SVGIcon
+          name="delete-light"
+          height={35}
+          fill="#707070"
+          />
+        </div>
         <div>
-        <NavBar />
-        <MenuBar />
+          <NavBar />
+          <MenuBar
+            menu={this.state.menu}
+          />
         </div>
       </div>
     )

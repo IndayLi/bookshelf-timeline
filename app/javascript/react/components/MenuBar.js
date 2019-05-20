@@ -5,19 +5,18 @@ import SVGCircle from './SVGCircle'
 
 
 const MenuBar = (props) => {
-  let fill = "#707070"
-  let user = "";
-  let books = "";
-  let calendar = "";
-  let search ="";
+  let user = "#707070";
+  let books = "#707070";
+  let calendar = "#707070";
+  let search ="#707070";
   if (props.menu === "books") {
-    books = "highlight"
+    books = "#02A7BC"
   } else if (props.menu === "user") {
-    user = "highlight"
+    user = "#02A7BC"
   } else if (props.menu === "calendar") {
-    calendar = "highlight"
+    calendar = "#02A7BC"
   } else if (props.menu === "search") {
-    search = "highlight"
+    search = "#02A7BC"
   }
 
   <div className="container">
@@ -27,18 +26,18 @@ const MenuBar = (props) => {
     <div>
       <div id="menu-bar">
         <div className="menu-icon">
-          <div className={`${user}`}>
-            <SVGIcon name="user" height={40} />
+          <div className="icon-image">
+            <SVGIcon name="user" height={40} fill= {`${user}`} />
           </div>
-          <div className={`${books}`}>
+          <div className={`icon-image ${books}`}>
             <Link to={'/books'}>
-              <SVGIcon name="books" height={40} />
+              <SVGIcon name="books" height={40} fill= {`${books}`}/>
             </Link></div>
-          <div className={`${calendar}`}>
-            <SVGIcon name="calendar" height={40} />
+          <div className={`icon-image ${calendar}`}>
+            <SVGIcon name="calendar" height={40} fill= {`${calendar}`}/>
           </div>
-          <div className={`${search}`}>
-            <SVGIcon name="search" height={40} />
+          <div className={`icon-image ${search}`}>
+            <SVGIcon name="search" height={40} fill= {`${search}`}/>
           </div>
         </div>
       </div>

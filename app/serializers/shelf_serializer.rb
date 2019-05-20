@@ -6,7 +6,7 @@ class ShelfSerializer < ActiveModel::Serializer
   end
 
   def user_data
-    {first_name: object.user.first_name, email: object.user.email, image_url: object.user.image_url}
+    {id: object.user.id, first_name: object.user.first_name, email: object.user.email, image_url: object.user.image_url}
   end
 
 end

@@ -6,7 +6,6 @@ class NewBookForm extends Component {
   constructor(props) {
     super(props);
     this.state={
-      user: "",
       title: "",
       author: "",
       page_count: "",
@@ -15,6 +14,7 @@ class NewBookForm extends Component {
       publication_year: ""
     }
     this.handleOnChange = this.handleOnChange.bind(this);
+    this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
   handleOnChange(event) {
@@ -22,12 +22,34 @@ class NewBookForm extends Component {
     this.setState({ [event.target.name]: newData });
   }
 
+  handleOnSubmit(event) {
+    let bookPayload={
+      title: this.state.title,
+      author: this.state.author,
+      page_count: this.state.page_count,
+      description: this.state.description,
+      location: this.state.location,
+      publication_year: this.state.publication_year
+    }
+    this.props.addNewUserBook(bookPayload)
+  }
+  clearForm() {
+    this.setState({
+      title: "",
+      author: "",
+      page_count: "",
+      description: "",
+      location: "",
+      publication_year: ""
+    });
+  };
+
 //requires fetch call to add book to list of books, AND add a shelf with user
   render() {
     return(
       <div className="form-container">
         <h3>What New Book are You Exploring?</h3>
-        <form onSubmit="" className="new-book-form">
+        <form onSubmit={this.handleOnSubmit} className="new-book-form">
           <FormField
             type="text"
             label="Title *"
@@ -64,10 +86,10 @@ class NewBookForm extends Component {
             handleOnChange={ this.handleOnChange }
           />
           <FormField
-            type="file"
-            label="Upload Book Cover"
-            name="image_url"
-            value={ this.state.image_url}
+            type="integer"
+            label="Year published"
+            name="publication_year"
+            value={ this.state.publication_year }
             handleOnChange={ this.handleOnChange }
           />
           <FormField
@@ -75,7 +97,6 @@ class NewBookForm extends Component {
             label=""
             name="submit-form"
             value="Add Book"
-            handleOnChange={ "" }
           />
           <div onClick= { this.props.handleVisibility }>
             <FormField
@@ -83,7 +104,6 @@ class NewBookForm extends Component {
               label=""
               name="cancel-form"
               value="Cancel"
-              handleOnChange={ "" }
             />
           </div>
         </form>

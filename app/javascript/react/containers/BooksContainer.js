@@ -15,10 +15,12 @@ class BooksContainer extends Component {
       user: {},
       books: [],
       formVisibility: "hidden",
-      newBook: {}
+      newBook: {},
+      menu: "books"
     }
     this.setBookColor = this.setBookColor.bind(this);
     this.showNewBookForm = this.showNewBookForm.bind(this);
+    this.addNewUserBook = this.addNewUserBook.bind(this);
   }
 
   componentDidMount() {
@@ -52,12 +54,39 @@ class BooksContainer extends Component {
     }
   }
 
+  addNewUserBook(bookPayload) {
+    let newShelf = { user: this.state.user, book: bookPayload}
+    fetch('/api/v1/books', {
+      credentials: "same-origin",
+      method: 'POST',
+      body: JSON.stringify(newShelf),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status}(${response.statusText})` ,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render() {
     let pageTitle
     if (this.state.books.length === 0) {
       pageTitle = "Add a Book to Your Library!"
     } else {
-      pageTitle = "Select a Book!"
+      pageTitle = "Which Book are You Reading Now?"
     }
 
     let bookArray = this.state.books.map((book, index) => {
@@ -85,6 +114,7 @@ class BooksContainer extends Component {
         <div className={`add-book ${this.state.formVisibility}`}>
           <NewBookForm
             handleVisibility={this.showNewBookForm}
+            addNewUserBook={this.addNewUserBook}
           />
         </div>
         <div className="bookshelf-content">
@@ -100,7 +130,10 @@ class BooksContainer extends Component {
         </div>
         <IMGBookshelf/>
         </div>
-        <MenuBar/>
+        <NavBar
+        />
+        <MenuBar
+          menu={this.state.menu}/>
       </div>
     )
   }

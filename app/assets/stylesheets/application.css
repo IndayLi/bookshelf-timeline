@@ -125,15 +125,19 @@ dl {
 #menu-bar {
   background-color: white;
   position: fixed;
+  display: inline-grid;
+  columns: 4;
   bottom: 0;
   height: 60px;
+  width: 100%;
   padding: 10px;
+  margin: 0px;
   z-index: 20;  /* menu-bar */
 }
 
 .menu-icon {
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 12%;
+  padding-right: 12%;
   color: #707070;
   display: flex;
   justify-content: space-between;
@@ -180,7 +184,6 @@ dl {
   top: 568px;
   left: -100px;
   z-index: 11;  /* edit-shelf-button */
-  color: #FFFFFF;
 }
 /* 5) Books */
 
@@ -189,6 +192,7 @@ dl {
   display: flex;
   cursor: pointer;
   justify-content: center;
+  width: 421.5px;
 }
 
 .blue {
@@ -206,6 +210,7 @@ dl {
 
 .title{
   align-self: center;
+  text-align: center;
   margin: 10px;
   padding-left: 30px;
   padding-right: 30px;
@@ -224,7 +229,7 @@ dl {
   border-radius: 0 5px 5px 0;
   margin-top: 2px;
   height: 60px;
-  align-content: center;
+  /* align-content: flex-start; */
   z-index: 1;  /* book-contents */
 }
 
@@ -232,7 +237,11 @@ dl {
   margin-left: 220px;
   transform: rotate(-90deg);
   position: absolute;
-  top: -50px;
+  left: 130px;
+  /* left: 0px; */
+  top: -130px;
+  display: block;
+  justify-content: flex-start;
   z-index: 1;  /* bookshelf-content */
 }
 
@@ -277,33 +286,63 @@ dl {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+}
+@media only screen and (max-width: 1300px) {
+  #shelf-front {
+    margin: 0px;
+    width: 100%;
+  }
+
+  #shelf-back {
+    margin: 0px;
+    border-radius: 0px;
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   .book-show-container {
-    padding-top: 80px;
+    margin: 0px;
+    padding-top: 20px;
     column-count: 1;
     height: 600px;
-    background-image: url('/images/open-book_500x310.png');
+    background-image: url('/images/open-book_500x480.png');
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .book-cover-image {
-    height: 20px;
+    height: 150px;
     width: 150px;
-    margin: 0px;
-    padding: 0px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book-show-left {
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book-show-right {
+    padding-top: 10px;
+    width: 300px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
 
-  .book-show-left {
-    margin: 0px
+  h3 {
+    margin-top: 10px;
+    font-size: 1em;
   }
-  .book-show-right {
-    margin: 0px
+
+  dl, li {
+    font-size: .8em;
   }
 }
 
@@ -325,20 +364,6 @@ dl {
   background-color: rgba(225,225,225,0.95);
 }
 
-.visible{
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0px);
-  transition: all .5s;
-
-}
-
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateX(-100px);
-  transition: all .5s;
-}
 
 .form-container {
 }
@@ -375,6 +400,20 @@ dl {
 
 /* 10) Animation */
 
+/* NEW BOOK FORM */
+.visible{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+  transition: all .5s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all .5s;
+}
 
 /* FLIPPING TILES */
 /* .flip-container {

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bookshelf</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-  <%= csrf_meta_tags %>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Permanent+Marker|Neucha" rel="stylesheet">
-</head>
-<body class="all-pages">
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h3><a href="/books">HOME</a></h3>
-      </li>
-    </ul>
+  <head>
+    <title>Bookshelf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
 
-    <section class="top-bar-section">
-      <ul class="right">
-        <%- if current_user -%>
-          <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
-          <li><%= link_to 'SIGN IN', new_user_session_path %></li>
-        <%- end -%>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Permanent+Marker|Neucha" rel="stylesheet">
+  </head>
+  <body class="all-pages">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h3><a href="/books">HOME</a></h3>
+        </li>
       </ul>
-    </section>
-  </nav>
 
-  <%- flash.each do |key, value| -%>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-    </div>
-  <%- end -%>
+      <section class="top-bar-section">
+        <ul class="right">
+          <%- if current_user -%>
+            <li><%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %></li>
+          <%- else -%>
+            <li><%= link_to 'SIGN UP', new_user_registration_path %></li>
+            <li><%= link_to 'SIGN IN', new_user_session_path %></li>
+          <%- end -%>
+        </ul>
+      </section>
+    </nav>
 
-  <%= yield %>
-
-  <%= javascript_include_tag 'application' %>
-
-  <%- if Rails.env.development? || Rails.env.test? -%>
-    <%= javascript_tag do %>
-      window.railsEnv = '<%= Rails.env %>'
+    <%- flash.each do |key, value| -%>
+      <div class="flash flash-<%= key %>">
+        <%= value %>
+      </div>
     <%- end -%>
-  <%- end -%>
-  <%= javascript_pack_tag 'application' %>
 
-  <%= yield :extra_footer %>
-</body>
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <%- if Rails.env.development? || Rails.env.test? -%>
+      <%= javascript_tag do %>
+        window.railsEnv = '<%= Rails.env %>'
+      <%- end -%>
+    <%- end -%>
+    <%= javascript_pack_tag 'application' %>
+
+    <%= yield :extra_footer %>
+  </body>
 </html>
