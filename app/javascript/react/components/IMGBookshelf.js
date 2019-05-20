@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 const IMGBookshelf = props => (
   <div>
-    <div id="shelfBack">
+    <div id="shelf-back">
     </div>
-    <div id="shelfFront">
+    <div id="shelf-front">
     </div>
   </div>
 )

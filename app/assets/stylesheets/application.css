@@ -26,6 +26,7 @@
 /* 8) Forms */
 /* 9) Admin-specific */
 /* 10) Animation */
+/* 11) Error Messages */
 
 /* 1) General */
 * {
@@ -36,22 +37,29 @@
 }
 
 body {
-  background-color: #D3D3D3;
+  background-color: #F7F7F7;
   margin: 0px;
   font-family: 'Raleway', sans-serif;
 }
 
 h1, h2 {
-  padding-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Neucha', cursive;
   font-weight: bolder;
   justify-content: center;
   text-align: center;
 }
 
+h1 {
+  color: #707070
+}
+
 h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Neucha', cursive;
   font-weight: 600;
+  color: #02A7BC;
 }
 
 dl {
@@ -61,15 +69,11 @@ dl {
 .bold-text {
   font-weight: bold;
 }
-.page-header {
-  background-color: rgba(211, 211, 211, 0.5);
-  z-index: 100;
-  margin-top: 0px;
-  padding-top: 20px;
-}
 
-.hide {
-  visibility: hidden;
+.page-header {
+  background-color: rgba(247,247,247,0.5);
+  z-index: 30;   /* page-header */
+  margin-top: 0px;
 }
 
 
@@ -86,18 +90,24 @@ dl {
   width: 100%;
   height: 70px;
   align-items: center;
-  background-color: #D3D3D3;
+  /* background-color: #D3D3D3; solid gray blends in with background*/
+  background-color: rgba(255,255,255,0.5);
   position: fixed;
   bottom: 60px;
   margin: 0;
   padding: 15px;
-  z-index: 30;
+  z-index: 10;  /* nav-bar */
 }
 
 #nav-icons {
-  color: white;
   display: flex;
   justify-content: space-between;
+}
+
+.chevron-left > .solid {
+  padding-left: 0px;
+  margin-left: 0px;
+  padding-right: 20%;
 }
 
 .div-circles {
@@ -114,14 +124,19 @@ dl {
 #menu-bar {
   background-color: white;
   position: fixed;
+  display: inline-grid;
+  columns: 4;
   bottom: 0;
   height: 60px;
+  width: 100%;
   padding: 10px;
+  margin: 0px;
+  z-index: 20;  /* menu-bar */
 }
 
 .menu-icon {
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 12%;
+  padding-right: 12%;
   color: #707070;
   display: flex;
   justify-content: space-between;
@@ -139,27 +154,36 @@ dl {
   font-size: 2em;
 }
 
-#shelfFront {
-  position: fixed;
-  bottom: 140px;
-  width: 96%;
-  height: 42px;
-  background-color: #9F5F1E;
-  z-index: 50;
-  box-shadow: 10px 10px 10px #707070;
-  margin-right: 20px;
-}
-
-#shelfBack {
-  position: fixed;
-  bottom: 175px;
+#shelf-front {
+  position: absolute;
+  top: 560px;
   width: 96%;
   height: 50px;
-  background-color: #B47230;
-  border-radius: 10px 10px 0 0;
-  z-index: -1;
+  background-color: #9F5F1E;
+  z-index: 2;  /* shelf-front */
+  box-shadow: 10px 10px 10px #707070;
+  margin-right: 20px;
+  margin-left: 10px;
 }
 
+#shelf-back {
+  position: absolute;
+  top: 510px;
+  width: 96%;
+  height: 50px;
+  margin-right: 20px;
+  margin-left: 10px;
+  background-color: #B47230;
+  border-radius: 10px 10px 0 0;
+  z-index: 0;  /* shelf-back */
+}
+
+.edit-shelf-button {
+  position: absolute;
+  top: 568px;
+  left: -100px;
+  z-index: 11;  /* edit-shelf-button */
+}
 /* 5) Books */
 
 .book-spine {
@@ -167,6 +191,7 @@ dl {
   display: flex;
   cursor: pointer;
   justify-content: center;
+  width: 421.5px;
 }
 
 .blue {
@@ -184,58 +209,50 @@ dl {
 
 .title{
   align-self: center;
+  text-align: center;
   margin: 10px;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
-  font-size: 1.25em;
+  font-size: 1em;
   background: linear-gradient(180deg, rgba(36,36,36,0.3267682072829131) 0%, rgba(143,143,143,0.12228641456582634) 3%, rgba(143,143,143,0.26234243697478987) 84%, rgba(36,36,36,0.26514355742296913) 98%);
   width: 100%;
   border-radius: 5px;
   font-size-adjust: auto;
 }
 
-/* .author{
-  align-self: center;
-  padding-right: 40px;
-  padding-left: 30px;
-  font-style: italic;
-  font-weight: lighter;
-  font-size: 1em;
-  justify-content:  space-around;
-} */
-
 .book-contents {
   box-shadow: inset 5px 0px 15px #000000;
   border-radius: 0 5px 5px 0;
   margin-top: 2px;
   height: 60px;
-  align-content: center;
-  z-index: 40;
+  /* align-content: flex-start; */
+  z-index: 1;  /* book-contents */
 }
 
 .bookshelf-content {
-  margin-left: 200px;
+  margin-left: 220px;
   transform: rotate(-90deg);
-  position: fixed;
-  bottom: -5px;
-  z-index: 40;
+  position: absolute;
+  left: 130px;
+  /* left: 0px; */
+  top: -130px;
+  display: block;
+  justify-content: flex-start;
+  z-index: 1;  /* bookshelf-content */
 }
 
 .book-cover-image {
-  /* margin-right: 40px;
-  margin-bottom: 40px; */
+  margin-top: 20px;
   height: 400px;
   width: 300px;
   background-color: #D3D3D3;
   border-style: double;
   border-color: #707070;
   border-width: thin;
-}
-
-.book-details {
+  position: relative;
 }
 
 .book-show-right {
@@ -245,7 +262,6 @@ dl {
 }
 
 .book-show-left {
-  /* margin-top: 200px; */
   margin-left: 275px;
 }
 
@@ -269,52 +285,134 @@ dl {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+}
+@media only screen and (max-width: 1300px) {
+  #shelf-front {
+    margin: 0px;
+    width: 100%;
+  }
+
+  #shelf-back {
+    margin: 0px;
+    border-radius: 0px;
+    width: 100%;
+  }
 }
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 800px) {
   .book-show-container {
-    padding-top: 80px;
+    margin: 0px;
+    padding-top: 20px;
     column-count: 1;
     height: 600px;
-    background-image: url('/images/open-book_500x310.png');
+    background-image: url('/images/open-book_500x480.png');
     background-repeat: no-repeat;
     background-position: center;
   }
 
   .book-cover-image {
-    height: 20px;
+    height: 150px;
     width: 150px;
-    margin: 0px;
-    padding: 0px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book-show-left {
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .book-show-right {
+    padding-top: 10px;
+    width: 300px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     display: block;
   }
 
-  .book-show-left {
-    margin: 0px
+  h3 {
+    margin-top: 10px;
+    font-size: 1em;
   }
-  .book-show-right {
-    margin: 0px
+
+  dl, li {
+    font-size: .8em;
   }
 }
-
-
-
 
 /* 6) Timelines */
 
 .timeline-list {
   padding-left: 30px;
+
 }
 /* 7) Events */
 
 /* 8) Forms */
+.add-book {
+  position: fixed;
+  bottom: 60px;
+  top: 0px;
+  z-index: 12; /* add-book */
+  padding: 20px;
+  background-color: rgba(225,225,225,0.95);
+}
+
+
+.form-container {
+}
+
+.new-book-form {
+}
+
+.form-label {
+  font-weight: 600;
+  color: #02A7BC;
+  cursor: default;
+}
+
+.form-field {
+  text-decoration: none;
+  height: 30px;
+  margin-bottom: 16px;
+}
+
+.submit-form,
+.cancel-form {
+  background-color: #02A7BC;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1em;
+  margin-top: 10px;
+  width: 150px;
+  opacity: 1;
+  align-self: center;
+  vertical-align: middle;
+}
 
 /* 9) Admin-specific */
 
 /* 10) Animation */
 
+/* NEW BOOK FORM */
+.visible{
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+  transition: all .5s;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all .5s;
+}
 
 /* FLIPPING TILES */
 /* .flip-container {
@@ -357,3 +455,6 @@ z-index: 2; */
 /* .back {
 transform: rotateY(180deg);
 } */
+
+
+/* 11) Error Messages */

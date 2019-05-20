@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+import SVGIcon from '../components/SVGIcon'
 import NavBar from '../components/NavBar'
 import MenuBar from '../components/MenuBar'
 
@@ -8,7 +9,8 @@ class BookShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state={
-      book: ""
+      book: "",
+      menu: "books"
     }
   }
 
@@ -54,15 +56,24 @@ class BookShowContainer extends Component {
             <h3>Timelines Created</h3>
             <div className="timeline-list">
               <ul>
-                <li>Timeline #1</li>
-                <li>Timeline #2</li>
+                <Link to=''><li>Timeline #1</li></Link>
+                <Link to=''><li>Timeline #2</li></Link>
               </ul>
             </div>
           </div>
         </div>
+        <div className="edit-shelf-button" onClick={this.showNewBookForm}>
+          <SVGIcon
+          name="delete-light"
+          height={35}
+          fill="#707070"
+          />
+        </div>
         <div>
-        <NavBar />
-        <MenuBar />
+          <NavBar />
+          <MenuBar
+            menu={this.state.menu}
+          />
         </div>
       </div>
     )

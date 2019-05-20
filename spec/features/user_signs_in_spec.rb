@@ -16,7 +16,7 @@ feature 'user signs in', %Q{
     click_button 'Log in'
 
     expect(page).to have_content('Signed in successfully')
-    expect(page).to have_content('Sign Out')
+    expect(page).to have_content('SIGN OUT')
   end
 
   scenario 'specify invalid credentials' do
@@ -24,6 +24,6 @@ feature 'user signs in', %Q{
 
     click_button 'Log in'
     expect(page).to have_content('Invalid Email or password')
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('SIGN OUT')
   end
 end

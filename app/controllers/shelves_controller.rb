@@ -1,5 +1,7 @@
 class ShelvesController < ApplicationController
   before_action :authorize_user
+  
+  protected
 
   def authorize_user
     if !user_signed_in?

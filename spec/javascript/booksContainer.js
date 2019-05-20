@@ -52,10 +52,10 @@ describe("BooksContainer", () => {
     }, 0);
   });
 
-  it("renders an h1 tag that says 'Select a Book!'", done => {
+  it("renders an h1 tag that says 'Which Book are You Reading Now?'", done => {
     setTimeout(() => {
       expect(wrapper.find("h1")).toBePresent();
-      expect(wrapper.find("h1").node.innerHTML).toContain("Select a Book!");
+      expect(wrapper.find("h1").node.innerHTML).toContain("Which Book are You Reading Now?");
       done();
     }, 0);
   });

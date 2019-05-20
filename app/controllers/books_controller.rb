@@ -7,6 +7,13 @@ class BooksController < ApplicationController
   def show
   end
 
+  def new
+    @book = Book.new
+    @shelf = Shelf.new
+  end
+
+  protected
+
   def authorize_user
     if !user_signed_in?
       flash[:notice] = "Please sign in or create an account."

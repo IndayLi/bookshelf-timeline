@@ -23,7 +23,7 @@ feature 'user registers', %Q{
     click_button 'Create Account'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('Sign Out')
+    expect(page).to have_content('SIGN OUT')
   end
 
   scenario 'provide invalid registration information' do
@@ -33,6 +33,6 @@ feature 'user registers', %Q{
     expect(page).to have_content("can't be blank")
     expect(page).to have_content("is invalid")
     expect(page).to have_content("is too short")
-    expect(page).to_not have_content('Sign Out')
+    expect(page).to_not have_content('SIGN OUT')
   end
 end
