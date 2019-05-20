@@ -12,7 +12,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def create
-    
+
   end
 
   private
@@ -22,7 +22,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def user_params
-    require(:current_user).permit(:first_name, :image_url, :created_at, :email)
+    require(:current_user).permit(:id)
   end
 
 end

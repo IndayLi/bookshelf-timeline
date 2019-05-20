@@ -54,8 +54,8 @@ class BookShowContainer extends Component {
             <h3>Timelines Created</h3>
             <div className="timeline-list">
               <ul>
-                <li>Timeline #1</li>
-                <li>Timeline #2</li>
+                <Link to=''><li>Timeline #1</li></Link>
+                <Link to=''><li>Timeline #2</li></Link>
               </ul>
             </div>
           </div>

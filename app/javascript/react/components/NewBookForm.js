@@ -6,36 +6,90 @@ class NewBookForm extends Component {
   constructor(props) {
     super(props);
     this.state={
-      user: ""
+      user: "",
       title: "",
       author: "",
       page_count: "",
       description: "",
       location: "",
-      image_url: "",
-      publication_year: "",
-
+      publication_year: ""
     }
-    debugger
+    this.handleOnChange = this.handleOnChange.bind(this);
   }
 
-
+  handleOnChange(event) {
+    let newData = event.target.value;
+    this.setState({ [event.target.name]: newData });
   }
+
 //requires fetch call to add book to list of books, AND add a shelf with user
   render() {
     return(
-      <div>
-        <form onSubmit="" className="form add-book"
+      <div className="form-container">
+        <h3>What New Book are You Exploring?</h3>
+        <form onSubmit="" className="new-book-form">
           <FormField
             type="text"
-            fieldName="title"
-            value={this.state. ______}
-
-
+            label="Title *"
+            name="title"
+            value={ this.state.title }
+            handleOnChange={ this.handleOnChange }
           />
+          <FormField
+            type="text"
+            label="Author *"
+            name="author"
+            value={ this.state.author }
+            handleOnChange={ this.handleOnChange }
+          />
+          <FormField
+            type="text"
+            label="Location"
+            name="location"
+            value={ this.state.location }
+            handleOnChange={ this.handleOnChange }
+          />
+          <FormField
+            type="text"
+            label="Description"
+            name="description"
+            value={ this.state.description }
+            handleOnChange={ this.handleOnChange }
+          />
+          <FormField
+            type="integer"
+            label="Number of Pages"
+            name="page_count"
+            value={ this.state.page_count }
+            handleOnChange={ this.handleOnChange }
+          />
+          <FormField
+            type="file"
+            label="Upload Book Cover"
+            name="image_url"
+            value={ this.state.image_url}
+            handleOnChange={ this.handleOnChange }
+          />
+          <FormField
+            type="submit"
+            label=""
+            name="submit-form"
+            value="Add Book"
+            handleOnChange={ "" }
+          />
+          <div onClick= { this.props.handleVisibility }>
+            <FormField
+              type="button"
+              label=""
+              name="cancel-form"
+              value="Cancel"
+              handleOnChange={ "" }
+            />
+          </div>
+        </form>
       </div>
     )
-  }
-}
+  };
+};
 
 export default NewBookForm;

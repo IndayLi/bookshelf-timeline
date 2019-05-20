@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 const FormField = props => {
-
   return(
     <div>
-      <label>{props.labelName}</label>
+      <label className="form-label">{props.label}</label>
       <input
+        className={`form-field ${props.name}`}
         type={props.type}
-        name={props.value}
+        name={props.name}
         value={props.value}
         onChange={props.handleOnChange}
       />

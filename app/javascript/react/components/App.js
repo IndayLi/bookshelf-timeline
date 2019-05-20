@@ -3,6 +3,7 @@ import { Router, browserHistory, Route} from 'react-router';
 
 import BooksContainer from '../containers/BooksContainer';
 import BookShowContainer from '../containers/BookShowContainer';
+import NewBookForm from './NewBookForm';
 
 const App = (props) => {
   return(

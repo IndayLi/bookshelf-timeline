@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 
 import SVGIcon from '../components/SVGIcon'
 import Book from '../components/Book'
+import NewBookForm from '../components/NewBookForm'
 import NavBar from '../components/NavBar'
 import MenuBar from '../components/MenuBar'
 import IMGBookshelf from '../components/IMGBookshelf'
@@ -13,9 +14,11 @@ class BooksContainer extends Component {
     this.state={
       user: {},
       books: [],
-      menu: "books"
+      formVisibility: "hidden",
+      newBook: {}
     }
     this.setBookColor = this.setBookColor.bind(this);
+    this.showNewBookForm = this.showNewBookForm.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +42,14 @@ class BooksContainer extends Component {
   setBookColor(value) {
     let colorIndex = ["blue", "pink", "green", "yellow"]
     return colorIndex[value%4]
+  }
+
+  showNewBookForm(event) {
+    if (this.state.formVisibility==="hidden") {
+      this.setState({ formVisibility: "visible" })
+    } else if (this.state.formVisibility==="visible") {
+      this.setState({ formVisibility: "hidden" })
+    }
   }
 
   render() {
@@ -65,28 +76,31 @@ class BooksContainer extends Component {
       )
     })
     return(
-      <div>
-        <div className="edit-shelf-button">
-          <SVGIcon
-          name="add-light"
-          height={40}
-          fill="#F4F4F4"
+      <div >
+        <div className="page-header">
+        <h1>
+        {pageTitle}
+        </h1>
+        </div>
+        <div className={`add-book ${this.state.formVisibility}`}>
+          <NewBookForm
+            handleVisibility={this.showNewBookForm}
           />
         </div>
-        <div>
-        </div>
-        <h1 className="page-header">
-          {pageTitle}
-        </h1>
         <div className="bookshelf-content">
         {bookArray}
         </div>
         <div>
+        <div className="edit-shelf-button" onClick={this.showNewBookForm}>
+        <SVGIcon
+        name="add-light"
+        height={35}
+        fill="#F4F4F4"
+        />
+        </div>
         <IMGBookshelf/>
         </div>
-        <NavBar/>
-        <MenuBar
-          menu={this.state.menu}/>
+        <MenuBar/>
       </div>
     )
   }
