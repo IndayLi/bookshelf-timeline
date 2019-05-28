@@ -8,7 +8,7 @@ class Api::V1::BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    render json: @book
+    render json: { user: current_user_data, book: @book }
   end
 
   def create
@@ -21,8 +21,14 @@ class Api::V1::BooksController < ApplicationController
     else
       render json: { error: @book.errors.full_messages }, status: :unprocessable_entity
     end
-
   end
+
+  def destroy
+    book = Bool find(params["id]"])
+    user = current_user
+    if shelf
+  end
+
 
   private
 

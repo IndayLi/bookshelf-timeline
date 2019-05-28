@@ -255,14 +255,19 @@ dl {
   position: relative;
 }
 
-.book-show-right {
-  margin-top: 200px;
-  margin-right: 225px;
-
-}
-
 .book-show-left {
   margin-left: 275px;
+}
+
+div.book-show-right {
+  margin-top: 200px;
+  margin-right: 235px;
+  overflow: scroll;
+  height: 425px;
+}
+
+div.book-details {
+  padding-bottom: 10px;
 }
 
 @media only screen and (min-width: 1440px) {

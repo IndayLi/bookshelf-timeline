@@ -23,6 +23,7 @@ class NewBookForm extends Component {
   }
 
   handleOnSubmit(event) {
+    event.preventDefault()
     let bookPayload={
       title: this.state.title,
       author: this.state.author,

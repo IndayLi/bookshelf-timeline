@@ -52,6 +52,7 @@ class BookShowContainer extends Component {
           <DeleteBookForm
             handleVisibility={this.showDeleteBookForm}
             book={this.state.book}
+            user={this.state.user}
           />
         </div>
         <div className="book-show-container">
@@ -65,7 +66,7 @@ class BookShowContainer extends Component {
             <div className="book-details">
               <dd>
                 <dl><span className="bold-text">Author:</span> {this.state.book.author}</dl>
-                <dl><span className="bold-text">Description:</span> {this.state.book.description}</dl>
+                <dl className="description"><span className="bold-text">Description:</span> {this.state.book.description}</dl>
                 <dl><span className="bold-text">Pages:</span> {this.state.book.page_count}</dl>
                 <dl><span className="bold-text">Setting:</span> {this.state.book.location}</dl>
                 <dl><span className="bold-text">Year Published:</span> {this.state.book.publication_year}</dl>
